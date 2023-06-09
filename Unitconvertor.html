@@ -1,0 +1,1385 @@
+<html>
+<head>
+<style>
+body {
+	margin-top:50px;
+}
+button {
+	border:1px solid black;
+	border-radius:10px;
+	background-color:black;
+	color:white;
+	cursor:pointer;
+}
+input {
+	width=100%;
+	border:1px solid black;
+	border-radius:10px;
+}
+select {
+	border:1px solid black;
+	border-radius:10px;
+}
+</style>
+</head>
+<body>
+<center>
+<h1>UNIT CONVERTER</h1>
+<table align="center" cellspacing=10 cellpadding=5>
+<tr>
+<td><select name="Meter"  id="Unit1">
+<option value="Meter" id="M1">Meter</option>
+<option value="Kilometer" id="K1">Kilometer</option>
+<option value="Centimeter" id="C1">Centimeter</option>
+<option value="Millimeter" id="MM1">Millimeter</option>
+<option value="Micrometer" id="MC1">Micrometer</option>
+<option value="Nanometer" id="N1">Nanometer</option>
+<option value="Mile" id="Mi1">Mile</option>
+<option value="Yard" id="Y1">Yard</option>
+<option value="Foot" id="F1">Foot</option>
+<option value="Inch" id="I1">Inch</option>
+<option value="Light Year" id="LY1">Light Year</option></select></td>
+<td><input type="number" id="T1"></td>
+</tr>
+<tr>
+<td><select name="Meter"  id="Unit2">
+<option value="Meter" id="M2">Meter</option>
+<option value="Kilometer" id="K2">Kilometer</option>
+<option value="Centimeter" id="C2">Centimeter</option>x
+<option value="Millimeter" id="MM2">Millimeter</option>
+<option value="Micrometer" id="MC2">Micrometer</option>
+<option value="Nanometer" id="N2">Nanometer</option>
+<option value="Mile" id="Mi2">Mile</option>
+<option value="Yard" id="Y2">Yard</option>
+<option value="Foot" id="F2">Foot</option>
+<option value="Inch" id="I2">Inch</option>
+<option value="Light Year" id="LY2">Light Year</option></select></td>
+<td><input type="number" id="result"></td>
+</tr>
+<tr><td><button onclick="convert()">Convert</button></td><td><button id="reset" onclick="clearVal()">Reset</button></td></tr>
+</table>
+<script>
+function convert()
+{
+	var firstInput=document.getElementById("T1");
+	var firstUnit=document.getElementById("Unit1").value;
+	var secondUnit=document.getElementById("Unit2").value;
+	var result=document.getElementById("result");
+	if(firstInput.value!="")
+	{
+	var convertedDistance;
+	if(firstUnit==="Meter")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*100;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1,609.344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/0.9144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/0.0254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/0.3048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance* 0.00000000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Kilometer")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*100000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1.609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/0.0009144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/0.0000254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/0.0003048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Centimeter")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance/100;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance/100000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*10;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*10000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*10000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/160934.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/91.44;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/2.54;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/30.48;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.0000000000000000010570 ;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Millimeter")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/25.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/304.8;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Micrometer")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/914400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/25400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/304800;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000000000000010570 ;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Nanometer")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance/1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/914400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/25400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/304800000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*1.057 ;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Mile")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*1609.344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance*1.609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*160934.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1609344000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1609344000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance*1,760;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance*63360;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance*5280;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000017011;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Yard")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*0.9144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0009144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*91.44;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*914400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*914400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/1,760;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance*36;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance*3;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance/10346380660000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Foot")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*0.3048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0003048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*30.48;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*304.8;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*304,800;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*304800000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/5,280;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/3;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance*12;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance/31039141970000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Inch")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*0.0254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0000254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*2.54;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*25.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*25400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*25400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance/63360;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance/36;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance/12;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance/372469703600000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(firstUnit==="Light Year")
+	{
+		var distance=parseFloat(firstInput.value);
+		if(secondUnit==="Meter")
+		{
+			var convertedDistance=distance*9460730473000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Kilometer")
+		{
+			var convertedDistance=distance*9460730473000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Centimeter")
+		{
+			var convertedDistance=distance*946073047300000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Millimeter")
+		{
+			var convertedDistance=distance*9460730473000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Micrometer")
+		{
+			var convertedDistance=distance*9.46073047321;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Nanometer")
+		{
+			var convertedDistance=distance*9.46073047324;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Mile")
+		{
+			var convertedDistance=distance*5878625373000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Yard")
+		{
+			var convertedDistance=distance*10346380660000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Inch")
+		{
+			var convertedDistance=distance/914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Foot")
+		{
+			var convertedDistance=distance*31039141970000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(secondUnit==="Light Year")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	}
+	if(result.value!="")
+	{
+	var convertedDistance;
+	if(secondUnit==="Meter")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*100;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1,609.344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/0.9144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/0.0254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/0.3048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance* 0.00000000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Kilometer")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*100000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1.609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/0.0009144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/0.0000254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/0.0003048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Centimeter")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance/100;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance/100000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*10;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*10000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*10000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/160934.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/91.44;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/2.54;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/30.48;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.0000000000000000010570 ;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Millimeter")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/25.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/304.8;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000000000010570;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Micrometer")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/914400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/25400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/304800;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000000000000010570 ;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Nanometer")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance/1000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance/1000000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance/10000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance/1000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance/1000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1609344000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/914400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/25400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/304800000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*1.057;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Mile")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*1609.344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance*1.609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*160934.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*1609344;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*1609344000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*1609344000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance*1,760;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance*63360;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance*5280;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance*0.00000000000017011;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Yard")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*0.9144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0009144;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*91.44;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*914400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*914400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/1,760;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance*36;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance*3;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance/10346380660000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Foot")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*0.3048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0003048;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*30.48;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*304.8;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*304,800;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*304800000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/5,280;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/3;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance*12;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance/31039141970000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Inch")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*0.0254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance*0.0000254;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*2.54;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*25.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*25400;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*25400000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance/63360;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance/36;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance/12;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance/372469703600000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	else if(secondUnit==="Light Year")
+	{
+		var distance=parseFloat(result.value);
+		if(firstUnit==="Meter")
+		{
+			var convertedDistance=distance*9460730473000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Kilometer")
+		{
+			var convertedDistance=distance*9460730473000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Centimeter")
+		{
+			var convertedDistance=distance*946073047300000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Millimeter")
+		{
+			var convertedDistance=distance*9460730473000000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Micrometer")
+		{
+			var convertedDistance=distance*9.46073047321;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Nanometer")
+		{
+			var convertedDistance=distance*9.46073047324;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Mile")
+		{
+			var convertedDistance=distance*5878625373000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Yard")
+		{
+			var convertedDistance=distance*10346380660000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Inch")
+		{
+			var convertedDistance=distance/914.4;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Foot")
+		{
+			var convertedDistance=distance*31039141970000000;
+			result.value=convertedDistance.toFixed(2);
+		}
+		else if(firstUnit==="Light Year")
+		{
+			var convertedDistance=distance;
+			result.value=convertedDistance.toFixed(2);
+		}
+	}
+	}
+}
+function clearVal()
+{
+	document.getElementById("Unit1").value="Meter";
+	document.getElementById("T1").value="";
+	document.getElementById("Unit2").value="Meter";
+	document.getElementById("result").value="";
+}
+</script>
+</center>
+</body>
+</html>
